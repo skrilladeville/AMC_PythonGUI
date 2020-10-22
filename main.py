@@ -17,7 +17,14 @@ class Questionnaire:
         with open(self.fichier_json, "r") as mj:
             self.questionnaire = json.load(mj)
 
+    def afficher_questionnaire(self):
+        """
+        Affiche le questionnaire en mémoire
+        """
+        print(self.questionnaire)
+
 
 if __name__ == "__main__":
     AMC = Questionnaire()
     AMC.importer_json()
+    AMC.afficher_questionnaire()
