@@ -1,0 +1,77 @@
+[
+    {
+        "id": "Q001",
+        "element":"QCM",
+        "type": "simple",
+        "question": "comment s'appelle le cheval blanc d'Henri IV ?",
+        "penalite":-0.5,
+        "reponses": [
+            [
+                "$\\frac{2}{3}$",
+                0
+            ],
+            [
+                "vert",
+                0
+            ],
+            [
+                "blanc",
+                1
+            ],
+            [
+                "orange",
+                0
+            ],
+            [
+                "bleu",
+                0
+            ]
+        ]
+    },
+    {
+        "id": "Q002",
+        "type": "simple",
+        "element":"QCM",
+        "points": 1,
+        "question": "Quelle est la couleur du le cheval blanc d'Henri IV ?",
+        "reponses": [
+            [
+                "rouge",
+                0
+            ],
+            [
+                "vert",
+                0
+            ],
+            [
+                "blanc",
+                0
+            ],
+            [
+                "orange",
+                0
+            ],
+            [
+                "bleu",
+                0
+            ],
+            [
+                "alzan",
+                1
+            ]
+        ]
+    },
+    {
+        "id":"Q003",
+        "type":"ouverte",
+        "question":"Comment s'écrit la formule d'einstein ?",
+        "points": 3,
+        "graduation":4
+    },
+    {
+        "id":"Q004",
+        "type":"competences",
+        "question":"Utilisation du microscope",
+        "points":3
+    }
+]
