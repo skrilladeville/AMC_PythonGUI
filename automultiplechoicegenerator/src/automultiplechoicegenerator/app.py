@@ -19,33 +19,33 @@ class AmcGenerator(toga.App):
         """
         main_box = toga.Box(style=Pack(direction=COLUMN))
         # Choix du nom du fichier JSON
-        name_label = toga.Label(
+        name_label_json = toga.Label(
             'Fichier JSON : ',
             style=Pack(padding=(0, 5))
         )
-        self.name_input = toga.TextInput(style=Pack(flex=1))
-        self.name_input.value = "myjson"
-        name_box = toga.Box(style=Pack(direction=ROW, padding=5))
-        name_box.add(name_label)
-        name_box.add(self.name_input)
+        self.filename_input = toga.TextInput(style=Pack(flex=1))
+        self.filename_input.value = "myjson"
+        name_input_box = toga.Box(style=Pack(direction=ROW, padding=5))
+        name_input_box.add(name_label_json)
+        name_input_box.add(self.filename_input)
         # Bouton pour convertir le JSON
         buttonLireJson = toga.Button(
             'Lire fichier JSON',
             on_press=self.lire_json,
             style=Pack(padding=5)
         )
-        # Zone pour afficher le résultat.
+        # Zone pour afficher le fichier JSON.
 
         self.texteZoneJson = toga.MultilineTextInput(
             id='view1', style=Pack(flex=1), readonly=True)
         self.texteZoneJson.MIN_HEIGHT = 200
 
-        text_box = toga.Box(style=Pack(direction=ROW, padding=5))
-        text_box.add(self.texteZoneJson)
+        text_box_json = toga.Box(style=Pack(direction=ROW, padding=5))
+        text_box_json.add(self.texteZoneJson)
 
-        main_box.add(name_box)
+        main_box.add(name_input_box)
         main_box.add(buttonLireJson)
-        main_box.add(text_box)
+        main_box.add(text_box_json)
 
         self.main_window = toga.MainWindow(title=self.formal_name)
         self.main_window.content = main_box
@@ -56,7 +56,7 @@ class AmcGenerator(toga.App):
             title="Fichier JSON", message="Lecture du fichier JSON")
         print('Start conversion JSON to AMC Tex file')
         question_liste = []
-        fichier_json = self.name_input.value
+        fichier_json = self.filename_input.value
         AMC = Questionnaire(question_liste, fichier_json)
         AMC.importer_json()
         self.texteZoneJson.value = AMC.afficher_questionnaire()
