@@ -32,7 +32,7 @@ class AmcGenerator(toga.App):
             style=Pack(padding=5)
         )
         main_box.add(name_box)
-        main_box.add(button)
+        main_box.add(buttonConvert)
 
         self.main_window = toga.MainWindow(title=self.formal_name)
         self.main_window.content = main_box
