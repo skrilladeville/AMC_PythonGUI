@@ -1,14 +1,21 @@
+
+# coding: utf-8
 import json
+import os.path
+import sys
 
 
 class Questionnaire:
 
     questionnaire = []  # Questionnaire en cours
     fichier_json = ''  # Nom du fichier json contenant les questions
+    chemin = ''
 
     def __init__(self,  questions_listes=[], questions_fichier='myjson'):
+        pathname = os.path.dirname(sys.argv[0])
         self.questionnaire = questions_listes
-        self.fichier_json = questions_fichier
+        self.fichier_json = os.path.join(pathname, questions_fichier)
+        self.chemin = pathname
 
     def importer_json(self):
         """
