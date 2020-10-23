@@ -47,6 +47,36 @@ class AmcGenerator(toga.App):
         main_box.add(buttonLireJson)
         main_box.add(text_box_json)
 
+        # Fichier AMC
+
+        name_label_amc = toga.Label(
+            'Fichier TEX : ',
+            style=Pack(padding=(0, 5))
+        )
+        self.name_output = toga.TextInput(style=Pack(flex=1))
+        self.name_output.value = "test.tex"
+        name_output_box = toga.Box(style=Pack(direction=ROW, padding=5))
+        name_output_box.add(name_label_amc)
+        name_output_box.add(self.name_output)
+        # Bouton pour convertir le JSON
+        buttonEcrireAmc = toga.Button(
+            'Ecrire fichier TEX',
+            on_press=self.ecrire_tex,
+            style=Pack(padding=5)
+        )
+        # Zone pour afficher le fichier TEX.
+
+        self.texteZoneAmc = toga.MultilineTextInput(
+            id='view2', style=Pack(flex=1), readonly=True)
+        self.texteZoneAmc.MIN_HEIGHT = 200
+
+        text_box_Amc = toga.Box(style=Pack(direction=ROW, padding=5))
+        text_box_Amc.add(self.texteZoneAmc)
+
+        main_box.add(name_output_box)
+        main_box.add(buttonEcrireAmc)
+        main_box.add(text_box_Amc)
+
         self.main_window = toga.MainWindow(title=self.formal_name)
         self.main_window.content = main_box
         self.main_window.show()
@@ -60,6 +90,9 @@ class AmcGenerator(toga.App):
         AMC = Questionnaire(question_liste, fichier_json)
         AMC.importer_json()
         self.texteZoneJson.value = AMC.afficher_questionnaire()
+
+    def ecrire_tex(self, widget):
+        pass
 
 
 def main():
