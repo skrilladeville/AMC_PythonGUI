@@ -11,10 +11,14 @@ class Questionnaire:
     fichier_json = ''  # Nom du fichier json contenant les questions
     chemin = ''
 
-    def __init__(self,  questions_listes=[], questions_fichier='myjson'):
+    def __init__(self,  questions_listes=[], fichier_json='myjson', fichier_tex='sujet_qcm'):
         pathname = os.path.dirname(sys.argv[0])
         self.questionnaire = questions_listes
-        self.fichier_json = os.path.join(pathname, questions_fichier)
+        self.fichier_json = os.path.join(pathname, fichier_json)
+        _, extension = os.path.splitext(fichier_tex)
+        if extension != '.tex':
+            fichier_tex += '.tex'
+        self.fichier_tex = os.path.join(pathname, fichier_tex)
         self.chemin = pathname
 
     def importer_json(self):
@@ -87,8 +91,9 @@ class Questionnaire:
             # Fin de l'élément de question
             question_amc.append('}\n')
         question_r = ''.join(question_amc)
-        with open('questionnaire_amc.tex', 'w+') as fichier:
-            fichier.write(question_r)
+        # with open(self.fichier_tex, 'w+') as fichier:
+        #    fichier.write(question_r)
+        return question_r
 
     def echappement(self, chaine):
         return chaine  # chaine.replace('\\', '\\\\')
