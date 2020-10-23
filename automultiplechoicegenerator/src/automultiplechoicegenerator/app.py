@@ -4,6 +4,7 @@ Générateur de questionnaire à choix multiples pour le logiciel Auto-Multiple-
 import toga
 from toga.style import Pack
 from toga.style.pack import COLUMN, ROW
+from .util import Questionnaire
 
 
 class AmcGenerator(toga.App):
@@ -23,6 +24,7 @@ class AmcGenerator(toga.App):
             style=Pack(padding=(0, 5))
         )
         self.name_input = toga.TextInput(style=Pack(flex=1))
+        self.name_input.value = "myjson"
         name_box = toga.Box(style=Pack(direction=ROW, padding=5))
         name_box.add(name_label)
         name_box.add(self.name_input)
@@ -40,6 +42,11 @@ class AmcGenerator(toga.App):
 
     def start_convert(self, widget):
         print('Start conversion JSON to AMC Tex file')
+        question_liste = []
+        fichier_json = self.name_input.value
+        AMC = Questionnaire(question_liste, fichier_json)
+        AMC.importer_json()
+        AMC.afficher_questionnaire()
 
 
 def main():
