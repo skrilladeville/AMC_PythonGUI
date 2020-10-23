@@ -28,7 +28,7 @@ class Questionnaire:
         """
         Affiche le questionnaire en mémoire
         """
-        print(self.questionnaire)
+        return self.questionnaire
 
     def convertion_amc(self, element_def='element'):
         question_amc = []
