@@ -20,7 +20,7 @@ class AmcGenerator(toga.App):
         main_box = toga.Box(style=Pack(direction=COLUMN))
 
         name_label = toga.Label(
-            'Fichier AMC: ',
+            'Fichier JSON : ',
             style=Pack(padding=(0, 5))
         )
         self.name_input = toga.TextInput(style=Pack(flex=1))
