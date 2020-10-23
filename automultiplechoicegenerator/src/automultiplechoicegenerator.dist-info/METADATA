@@ -1,0 +1,10 @@
+Metadata-Version: 2.1
+Briefcase-Version: 0.3.3
+Name: automultiplechoicegenerator
+Formal-Name: Générateur de QCM pour AMC
+App-ID: fr.nicolas-ogier.automultiplechoicegenerator
+Version: 0.0.1
+Home-page: https://nicolas-ogier.fr/automultiplechoicegenerator
+Author: Nicolas OGIER
+Author-email: info@nicolas-ogier.fr
+Summary: Générateur de questionnaire à choix multiples pour le logiciel Auto-Multiple-Choice.
