@@ -4,6 +4,7 @@ Générateur de questionnaire à choix multiples pour le logiciel Auto-Multiple-
 import toga
 from toga.style import Pack
 from toga.style.pack import COLUMN, ROW
+from convert import Questionnaire
 
 
 class GnrateurdeQCMpourAMC(toga.App):
