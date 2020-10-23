@@ -7,7 +7,7 @@ from toga.style.pack import COLUMN, ROW
 from convert import Questionnaire
 
 
-class GnrateurdeQCMpourAMC(toga.App):
+class AmcGenerator(toga.App):
 
     def startup(self):
         """
@@ -25,4 +25,4 @@ class GnrateurdeQCMpourAMC(toga.App):
 
 
 def main():
-    return GnrateurdeQCMpourAMC()
+    return AmcGenerator()
